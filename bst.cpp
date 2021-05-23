@@ -195,7 +195,18 @@ Tree<T>::~Tree(){
     (this->root)->TreeDel();
 }
 
-/*
+template<typename T>
+Node<T>& Node<T>::operator=(const Node<T>& node){
+    if(this->left != nullptr)
+        (this->left)->TreeDel();
+    if(this->right != nullptr)
+        (this->right)->TreeDel();
+    this->data = node.data;
+    this->left = node.left;
+    this->right = node.right;
+}
+
+
 int main(){
     Node<int>* node_d = nullptr;
     node_d = new Node<int>(7);
@@ -441,21 +452,23 @@ int main(){
         cout << "Test_30\tfailed" << endl;
     }   cout << "Test_30\tpassed" << endl;
     
+    try{                //31
+        cout << tree_n << endl;
+    } catch(...){
+        cout << "Test_31\tfailed" << endl;
+    }   cout << "Test_31\tpassed" << endl;
     
-    node_d = tree_n.Search(99);
-    cout << node_d->get_data() << endl;
-    cout << 0 << endl;
-    cout << tree_n;
-    cout << endl;
-    cout << 1 << endl;
-    node_d = tree_n.Search(34);
-    cout << node_d->get_data() << endl;
-    cout << 2 << endl;
-    cout << node_d;
+    try{                //32
+        node_d = tree_n.Search(24);
+        cout << node_d << endl;
+    } catch(...){
+        cout << "Test_32\tfailed" << endl;
+    }   cout << "Test_32\tpassed" << endl;
+    
     
     
     
     return 0;
 
 }
-*/
+

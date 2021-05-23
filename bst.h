@@ -25,6 +25,7 @@ public:
     T Max();
     Node<T>* DeleteNode(T _data);
     void TreeDel();
+    Node<T>& operator=(const Node<T>& node);
     friend ostream &operator<<(ostream &output, Node<T>* node) {
         if(node->left != nullptr){
             output << node->left;
