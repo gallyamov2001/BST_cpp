@@ -1,6 +1,5 @@
 #include "bst.h"
 
-using namespace std;
 
 int main(){
     Node<int>* node_d = nullptr;
@@ -247,17 +246,19 @@ int main(){
         cout << "Test_30\tfailed" << endl;
     }   cout << "Test_30\tpassed" << endl;
     
+    try{                //31
+        cout << tree_n << endl;
+    } catch(...){
+        cout << "Test_31\tfailed" << endl;
+    }   cout << "Test_31\tpassed" << endl;
     
-    node_d = tree_n.Search(99);
-    cout << node_d->get_data() << endl;
-    cout << 0 << endl;
-    cout << tree_n;
-    cout << endl;
-    cout << 1 << endl;
-    node_d = tree_n.Search(34);
-    cout << node_d->get_data() << endl;
-    cout << 2 << endl;
-    cout << node_d;
+    try{                //32
+        node_d = tree_n.Search(24);
+        cout << node_d << endl;
+    } catch(...){
+        cout << "Test_32\tfailed" << endl;
+    }   cout << "Test_32\tpassed" << endl;
+    
     
     
     
